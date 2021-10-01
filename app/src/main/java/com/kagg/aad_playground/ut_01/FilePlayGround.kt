@@ -3,6 +3,11 @@ package com.kagg.aad_playground.ut_01
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
+import java.nio.file.Files
+import kotlin.io.path.Path
+import kotlin.io.path.createDirectory
+import kotlin.io.path.deleteIfExists
+import kotlin.io.path.exists
 
 /**
  * init se ejecuta al ejecutar la clase
@@ -18,6 +23,7 @@ class FilePlayGround (private val activity: AppCompatActivity){
         //readFile()
         //readLineByLine()
         //deleteFile()
+        createFolder()
     }
     fun createFile(){
         val file = File(activity.filesDir,"aad.txt")
@@ -74,8 +80,37 @@ class FilePlayGround (private val activity: AppCompatActivity){
         }
     }
     fun readFromFile(): MutableList<String>{
-        val colors = mutableListOf<String>()
+        val colors = mutableListOf<String>() //sobra porque no estoy usandolo con el modo abreviado
         val file = File(activity.filesDir,"colors.txt")
+        if(!file.exists()){
+            return colors //que es un mutableList vacío como lo declaramos
+        }
         return file.readLines().toMutableList()
+    }
+    //fun readFromFile()= File(activity.filesDir,"colors.txt").readLines().toMutableList()
+    //hay que comprobar si existe o no en caso de no saberlo :)
+
+    //para crear carpetas
+    fun createFolder(){
+        //val path = Path(activity.filesDir.canonicalPath, "/documents")
+        //path.deleteIfExists() //si existe la elimina sino no hace nada
+        //path.createDirectory()
+        /*if(path.exists()){
+            Log.d("@dev","Folder exist")
+        }*/
+        //opcion 1
+        val file =File(activity.filesDir, "/docs")
+        file.mkdir()
+
+       /* val file =File(activity.filesDir, "/docs")
+       if (version .... ){
+            Files.createDirectory(Path(""))
+        }*/
+
+    }
+    fun createFileInFolder(){
+        val file = File(activity.filesDir.canonicalPath, "/documents")
+        file.writeText("Hola!")
+        //file.createNewFile()
     }
 }
