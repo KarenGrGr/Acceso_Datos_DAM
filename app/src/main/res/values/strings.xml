@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AAD-PlayGround</string>
+    <string name="preference_file_key">key1</string>
+    <string name="preference_encrypt_file_key">PruebaKey</string>
 </resources>

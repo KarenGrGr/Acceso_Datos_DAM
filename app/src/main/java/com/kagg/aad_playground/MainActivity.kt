@@ -3,7 +3,7 @@ package com.kagg.aad_playground
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.kagg.aad_playground.ut_01.DataStorageFile
+//import com.kagg.aad_playground.ut_01.DataStorageFile
 import com.kagg.aad_playground.ut_01.FilePlayGround
 
 class MainActivity : AppCompatActivity() {
@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         //visualizar los colores
         //val dataStorageType = DataStorageType(this)
-        val dataStorageType = DataStorageFile(this)
+        /*val dataStorageType = DataStorageFile(this)
         dataStorageType.privateFileCache()
         dataStorageType.privateExternalCacheFile()
         dataStorageType.privateExternalFile()
-        dataStorageType.privateFile()
+        dataStorageType.privateFile()*/
 
     }
 
